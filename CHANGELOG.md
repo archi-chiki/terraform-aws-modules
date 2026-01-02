@@ -1,24 +1,19 @@
+# Changelog
+
 ## [0.1.2](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.1...v0.1.2) (2026-01-02)
 
 ### Code Refactoring
 
 * 모듈 outputs 정리, RDS lifecycle ignore_changes 개선 ([f884d01](https://github.com/archi-chiki/terraform-aws-modules/commit/f884d01170906d85685019c4e39e9a8d9c2949df))
 
-# Changelog
+## [0.1.1](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.0...v0.1.1) (2026-01-02)
 
-All notable changes to this project will be documented in this file.
+### Features
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+* RDS 클러스터에 delete_automated_backups 옵션 추가
 
-## [0.1.1] - 2026-01-02
+## [0.1.0](https://github.com/archi-chiki/terraform-aws-modules/releases/tag/v0.1.0) (2026-01-02)
 
-### Added
+### Features
 
-- RDS 클러스터에 delete_automated_backups 옵션 추가
-
-## [0.1.0] - 2026-01-02
-
-### Added
-
-- Terraform AWS 모듈 프로젝트 초기 구성
+* Terraform AWS 모듈 프로젝트 초기 구성
