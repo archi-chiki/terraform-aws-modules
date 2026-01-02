@@ -1,10 +1,10 @@
+# Changelog
+
 ## [0.1.3](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.2...v0.1.3) (2026-01-02)
 
 ### Code Refactoring
 
 * **compute:** EC2 인스턴스 outputs을 개별 속성별로 분리 ([9ee7e54](https://github.com/archi-chiki/terraform-aws-modules/commit/9ee7e54db46780b9d125d10a159b1ad223334c16))
-
-# Changelog
 
 ## [0.1.2](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.1...v0.1.2) (2026-01-02)
 
