@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.4](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.3...v0.1.4) (2026-01-02)
+
+### Bug Fixes
+
+* semantic-release changelogTitle 설정 추가 ([2c278b5](https://github.com/archi-chiki/terraform-aws-modules/commit/2c278b5b60416fe1f44dd6e8c6ee090bb8342d4b))
+
 ## [0.1.3](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.2...v0.1.3) (2026-01-02)
 
 ### Code Refactoring
