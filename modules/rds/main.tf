@@ -106,7 +106,7 @@ resource "aws_rds_cluster" "this" {
   }
 
   lifecycle {
-    ignore_changes = [final_snapshot_identifier]
+    ignore_changes = [final_snapshot_identifier, master_password]
   }
 }
 
@@ -182,7 +182,7 @@ resource "aws_db_instance" "this" {
   }
 
   lifecycle {
-    ignore_changes = [final_snapshot_identifier]
+    ignore_changes = [final_snapshot_identifier, password]
   }
 }
 

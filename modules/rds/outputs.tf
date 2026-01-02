@@ -33,12 +33,6 @@ output "cluster_members" {
   value       = var.engine_type == "aurora" ? aws_rds_cluster.this[0].cluster_members : null
 }
 
-output "database_name" {
-  description = "Name of the default database"
-  value       = var.engine_type == "aurora" ? aws_rds_cluster.this[0].database_name : aws_db_instance.this[0].db_name
-  sensitive   = true
-}
-
 output "master_username" {
   description = "Master username for the database"
   value       = var.engine_type == "aurora" ? aws_rds_cluster.this[0].master_username : aws_db_instance.this[0].username

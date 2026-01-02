@@ -1,6 +1,6 @@
 # 애플리케이션 로드 밸런서
 resource "aws_lb" "this" {
-  name = "${var.environment}-${var.project_name}-alb-${var.service_name}${var.alb_purpose != null ? "-${var.alb_purpose}" : ""}"
+  name               = "${var.environment}-${var.project_name}-alb-${var.service_name}${var.alb_purpose != null ? "-${var.alb_purpose}" : ""}"
   internal           = var.internal
   load_balancer_type = "application"
   security_groups    = var.security_group_ids
