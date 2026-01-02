@@ -99,6 +99,8 @@ resource "aws_rds_cluster" "this" {
   enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
   database_insights_mode          = var.database_insights_mode
 
+  delete_automated_backups = var.delete_automated_backup_option
+
   tags = {
     Name = "${var.environment}-${var.project_name}-${var.service_name}-cluster"
   }

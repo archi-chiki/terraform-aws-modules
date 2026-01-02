@@ -10,7 +10,7 @@
 4. 스테이징된 변경사항이 없으면 `git diff`로 unstaged 변경사항 확인 후 사용자에게 스테이징 여부 질문
 5. 커밋 메시지 작성 후 사용자에게 프롬프트를 통해 승인 요청
 6. 릴리즈 여부를 사용자에게 프롬프트로 질문
-7. 릴리즈 요청 시, CHANGELOG.md 파일의 [Unreleased] 섹션에 변경사항 추가 (style, docs, chore, test 타입 제외)
+7. 릴리즈 요청 시, CHANGELOG.md 파일의 해당 버전 섹션에 변경사항 추가 (style, docs, chore, test 타입 제외)
 8. `git commit` 실행 (릴리즈 시 CHANGELOG.md 변경사항 포함)
 9. Push 및 Release 진행 여부를 프롬프트로 질문
 10. 승인 시 `git push` 실행
@@ -68,7 +68,7 @@ gh release create v<버전> --title "v<버전>" --notes-file CHANGELOG.md
 ### CHANGELOG 자동 기록 규칙
 
 - CHANGELOG.md가 없으면 아래 템플릿으로 새로 생성
-- [Unreleased] 섹션의 해당 카테고리에 항목 추가
+- 릴리즈 버전 섹션(`[X.X.X] - 날짜`)의 해당 카테고리에 항목 추가
 - style, docs, chore, test 타입은 CHANGELOG에 기록하지 않음
 
 ### CHANGELOG 형식 (Keep a Changelog)
@@ -79,9 +79,8 @@ gh release create v<버전> --title "v<버전>" --notes-file CHANGELOG.md
   ```
   # Changelog
 
-  ## [Unreleased]
-
   ## [1.0.0] - 2024-01-15
+
   ### Added
   - 새로운 기능 설명
 

@@ -224,3 +224,9 @@ variable "cluster_parameter" {
   }))
   default = []
 }
+
+variable "delete_automated_backup_option" {
+  description = "Delete automated backup option"
+  type        = bool
+  default     = true
+}
