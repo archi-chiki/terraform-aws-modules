@@ -1,3 +1,9 @@
+## [0.1.2](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.1...v0.1.2) (2026-01-02)
+
+### Code Refactoring
+
+* 모듈 outputs 정리, RDS lifecycle ignore_changes 개선 ([f884d01](https://github.com/archi-chiki/terraform-aws-modules/commit/f884d01170906d85685019c4e39e9a8d9c2949df))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
