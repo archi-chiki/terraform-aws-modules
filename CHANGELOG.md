@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.5](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.4...v0.1.5) (2026-01-05)
+
+### Code Refactoring
+
+* **compute:** 단일 인스턴스 모듈로 구조 변경 ([cf6d15a](https://github.com/archi-chiki/terraform-aws-modules/commit/cf6d15a5213b2688111f6348ea391ee79995a276))
+
 ## [0.1.4](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.3...v0.1.4) (2026-01-02)
 
 ### Bug Fixes
