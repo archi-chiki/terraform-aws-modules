@@ -1,21 +1,3 @@
-variable "instances" {
-  description = "EC2 instances configuration map"
-  type = map(object({
-    ami_id                = string
-    instance_type         = string
-    subnet_id             = string
-    security_group_ids    = list(string)
-    instance_profile_name = optional(string, null)
-    root_volume_size      = optional(number, 20)
-    root_volume_type      = optional(string, "gp3")
-    key_name              = optional(string, null)
-    user_data             = optional(string, "")
-    associate_public_ip   = optional(bool, false)
-    enable_eip            = optional(bool, false)
-  }))
-  default = {}
-}
-
 variable "environment" {
   description = "Environment name"
   type        = string
@@ -24,4 +6,71 @@ variable "environment" {
 variable "project_name" {
   description = "Project name for resource naming and tagging"
   type        = string
+}
+
+variable "instance_name" {
+  description = "Instance name for resource naming and tagging"
+  type        = string
+}
+
+variable "ami_id" {
+  description = "AMI ID for the EC2 instance"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "Subnet ID where the instance will be launched"
+  type        = string
+}
+
+variable "security_group_ids" {
+  description = "List of security group IDs"
+  type        = list(string)
+}
+
+variable "instance_profile_name" {
+  description = "IAM instance profile name"
+  type        = string
+  default     = null
+}
+
+variable "root_volume_size" {
+  description = "Root volume size in GB"
+  type        = number
+  default     = 20
+}
+
+variable "root_volume_type" {
+  description = "Root volume type"
+  type        = string
+  default     = "gp3"
+}
+
+variable "key_name" {
+  description = "SSH key pair name"
+  type        = string
+  default     = null
+}
+
+variable "user_data" {
+  description = "User data script"
+  type        = string
+  default     = ""
+}
+
+variable "associate_public_ip" {
+  description = "Associate public IP address"
+  type        = bool
+  default     = false
+}
+
+variable "enable_eip" {
+  description = "Enable Elastic IP allocation"
+  type        = bool
+  default     = false
 }

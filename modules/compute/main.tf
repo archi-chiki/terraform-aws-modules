@@ -1,30 +1,28 @@
 # EC2 인스턴스
 resource "aws_instance" "this" {
-  for_each = var.instances
+  ami                         = var.ami_id
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
+  subnet_id                   = var.subnet_id
+  vpc_security_group_ids      = var.security_group_ids
+  iam_instance_profile        = var.instance_profile_name
+  associate_public_ip_address = var.associate_public_ip
 
-  ami                         = each.value.ami_id
-  instance_type               = each.value.instance_type
-  key_name                    = each.value.key_name
-  subnet_id                   = each.value.subnet_id
-  vpc_security_group_ids      = each.value.security_group_ids
-  iam_instance_profile        = each.value.instance_profile_name
-  associate_public_ip_address = each.value.associate_public_ip
-
-  user_data = each.value.user_data != "" ? base64encode(each.value.user_data) : null
+  user_data = var.user_data != "" ? base64encode(var.user_data) : null
 
   root_block_device {
-    volume_type           = each.value.root_volume_type
-    volume_size           = each.value.root_volume_size
+    volume_type           = var.root_volume_type
+    volume_size           = var.root_volume_size
     delete_on_termination = true
     encrypted             = true
 
     tags = {
-      Name = "${var.environment}-${var.project_name}-${each.key}-volume"
+      Name = "${var.environment}-${var.project_name}-${var.instance_name}-volume"
     }
   }
 
   tags = {
-    Name = "${var.environment}-${var.project_name}-${each.key}"
+    Name = "${var.environment}-${var.project_name}-${var.instance_name}"
   }
 
   lifecycle {
@@ -33,20 +31,20 @@ resource "aws_instance" "this" {
   }
 }
 
-# enable_eip = true인 인스턴스용 Elastic IP
+# Elastic IP (조건부 생성)
 resource "aws_eip" "this" {
-  for_each = { for k, v in var.instances : k => v if v.enable_eip }
+  count = var.enable_eip ? 1 : 0
 
   domain = "vpc"
 
   tags = {
-    Name = "${var.environment}-${var.project_name}-${each.key}-eip"
+    Name = "${var.environment}-${var.project_name}-${var.instance_name}-eip"
   }
 }
 
 resource "aws_eip_association" "this" {
-  for_each = aws_eip.this
+  count = var.enable_eip ? 1 : 0
 
-  instance_id   = aws_instance.this[each.key].id
-  allocation_id = each.value.id
+  instance_id   = aws_instance.this.id
+  allocation_id = aws_eip.this[0].id
 }
