@@ -6,7 +6,6 @@ resource "aws_vpc" "main" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-vpc"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -16,7 +15,6 @@ resource "aws_internet_gateway" "main" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-igw"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -31,7 +29,6 @@ resource "aws_subnet" "public" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-subnet-public-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -45,7 +42,6 @@ resource "aws_subnet" "private" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-subnet-private-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -59,7 +55,6 @@ resource "aws_subnet" "db" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-subnet-db-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -71,7 +66,6 @@ resource "aws_eip" "nat" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-eip-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 
   depends_on = [aws_internet_gateway.main]
@@ -86,7 +80,6 @@ resource "aws_nat_gateway" "main" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-nat-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 
   depends_on = [aws_internet_gateway.main]
@@ -99,7 +92,6 @@ resource "aws_route_table" "public" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-rtb-public-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -127,7 +119,6 @@ resource "aws_route_table" "private" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-rtb-private-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -155,7 +146,6 @@ resource "aws_route_table" "db" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-rtb-db-${var.availability_zones[count.index]}"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }
 
@@ -175,6 +165,5 @@ resource "aws_db_subnet_group" "main" {
 
   tags = {
     Name        = "${var.environment}-${var.project_name}-${var.service_name}-db-subnet-group"
-    Environment = "${var.environment}-${var.project_name}"
   }
 }

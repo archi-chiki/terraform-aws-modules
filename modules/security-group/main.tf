@@ -8,7 +8,6 @@ resource "aws_security_group" "this" {
   tags = merge(
     {
       Name        = "${var.environment}-${var.project_name}-sg-${var.service_name}-${each.key}"
-      Environment = "${var.environment}-${var.project_name}"
     },
     each.value.tags
   )
