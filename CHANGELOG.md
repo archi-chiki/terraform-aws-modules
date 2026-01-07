@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.6](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.5...v0.1.6) (2026-01-07)
+
+### Code Refactoring
+
+* **vpc,security-group:** 중복 Environment 태그 제거 및 aws_region default 삭제 ([2f367f1](https://github.com/archi-chiki/terraform-aws-modules/commit/2f367f1e7747b00aaf1129acf1544949eae8010c))
+
 ## [0.1.5](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.4...v0.1.5) (2026-01-05)
 
 ### Code Refactoring
