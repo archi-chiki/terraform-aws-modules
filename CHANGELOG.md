@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.7](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.6...v0.1.7) (2026-01-09)
+
+### Code Refactoring
+
+* **iam:** role_description 변수에서 default 값 제거 ([12a9274](https://github.com/archi-chiki/terraform-aws-modules/commit/12a92745f9f19e7f2f97ce3761622025696696bd))
+
 ## [0.1.6](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.5...v0.1.6) (2026-01-07)
 
 ### Code Refactoring
