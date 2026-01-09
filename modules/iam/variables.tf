@@ -17,7 +17,6 @@ variable "role_name" {
 variable "role_description" {
   description = "Description of the IAM role"
   type        = string
-  default     = "Managed by Terraform"
 }
 
 variable "trusted_services" {
