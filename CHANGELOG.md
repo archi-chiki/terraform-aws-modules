@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.9](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.8...v0.1.9) (2026-01-12)
+
+### Code Refactoring
+
+* **vpc:** 미사용 aws_region 변수 제거 ([165cf72](https://github.com/archi-chiki/terraform-aws-modules/commit/165cf7277bd966c3d92154fb0bf7330bbf169508))
+
 ## [0.1.8](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.7...v0.1.8) (2026-01-12)
 
 ### Code Refactoring
