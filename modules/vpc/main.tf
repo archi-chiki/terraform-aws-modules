@@ -5,7 +5,7 @@ resource "aws_vpc" "main" {
   enable_dns_support   = true
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-vpc"
+    Name = "${var.environment}-${var.project_name}-vpc"
   }
 }
 
@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-igw"
+    Name = "${var.environment}-${var.project_name}-igw"
   }
 }
 
@@ -28,7 +28,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-subnet-public-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-subnet-public-${var.availability_zones[count.index]}"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_subnet" "private" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-subnet-private-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-subnet-private-${var.availability_zones[count.index]}"
   }
 }
 
@@ -54,7 +54,7 @@ resource "aws_subnet" "db" {
   availability_zone = var.availability_zones[count.index]
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-subnet-db-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-subnet-db-${var.availability_zones[count.index]}"
   }
 }
 
@@ -65,7 +65,7 @@ resource "aws_eip" "nat" {
   domain = "vpc"
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-eip-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-eip-${var.availability_zones[count.index]}"
   }
 
   depends_on = [aws_internet_gateway.main]
@@ -79,7 +79,7 @@ resource "aws_nat_gateway" "main" {
   subnet_id     = aws_subnet.public[count.index].id
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-nat-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-nat-${var.availability_zones[count.index]}"
   }
 
   depends_on = [aws_internet_gateway.main]
@@ -91,7 +91,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-rtb-public-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-rtb-public-${var.availability_zones[count.index]}"
   }
 }
 
@@ -118,7 +118,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-rtb-private-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-rtb-private-${var.availability_zones[count.index]}"
   }
 }
 
@@ -145,7 +145,7 @@ resource "aws_route_table" "db" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-rtb-db-${var.availability_zones[count.index]}"
+    Name = "${var.environment}-${var.project_name}-rtb-db-${var.availability_zones[count.index]}"
   }
 }
 
@@ -164,6 +164,6 @@ resource "aws_db_subnet_group" "main" {
 
 
   tags = {
-    Name        = "${var.environment}-${var.project_name}-${var.service_name}-db-subnet-group"
+    Name = "${var.environment}-${var.project_name}-${var.service_name}-db-subnet-group"
   }
 }

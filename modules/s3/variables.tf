@@ -30,3 +30,33 @@ variable "enable_encryption" {
   type        = bool
   default     = true
 }
+
+variable "sse_algorithm" {
+  description = "S3 SSE Algorithm"
+  type        = string
+  default     = "AES256"
+}
+
+variable "block_public_acls" {
+  description = "Block public access to the bucket"
+  type        = bool
+  default     = true
+}
+
+variable "block_public_policy" {
+  description = "Block public access to the bucket"
+  type        = bool
+  default     = true
+}
+
+variable "ignore_public_acls" {
+  description = "Ignore public access to the bucket"
+  type        = bool
+  default     = true
+}
+
+variable "restrict_public_buckets" {
+  description = "Restrict public access to the bucket"
+  type        = bool
+  default     = true
+}
