@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.8](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.7...v0.1.8) (2026-01-12)
+
+### Code Refactoring
+
+* **s3,vpc,security-group:** 하드코딩 값 변수화 및 태그 포맷팅 정리 ([c489a21](https://github.com/archi-chiki/terraform-aws-modules/commit/c489a2176f4059f9bb4492f670d52a983da1a7b0))
+
 ## [0.1.7](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.6...v0.1.7) (2026-01-09)
 
 ### Code Refactoring
