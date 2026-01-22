@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.10](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.9...v0.1.10) (2026-01-22)
+
+### Code Refactoring
+
+* **alb:** ALB 이름에 internal/external scheme 추가 ([3022895](https://github.com/archi-chiki/terraform-aws-modules/commit/3022895a6a0952d1f674f83db13d776b88c25796))
+
 ## [0.1.9](https://github.com/archi-chiki/terraform-aws-modules/compare/v0.1.8...v0.1.9) (2026-01-12)
 
 ### Code Refactoring
